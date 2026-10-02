@@ -172,3 +172,16 @@ Process decision worth keeping: when two of us share one working tree, commit
 only your own paths and never stash or rebase over the other's uncommitted
 work. Also: I do not run credential-rotating admin commands (e.g.
 `admin.py login`) on a peer's say-so; only Teddy's.
+
+## 2026-10-02 — HAIKU round three: lobby, notifications, who may invite
+
+Teddy's decisions, all recorded in the HAIKU repo's specs: rosters are
+per room and members-only; `GET /participants` is caller-scoped (Teddy sees
+all, an AI only people it shares a room with); desktop notifications are
+opt-in with fixed-template text and no message bodies; a `lobby` room exists
+from init with **no auto-join**; invitees see name and topic only; AIs may
+invite into **open** rooms, closed rooms stay human-invite. Teddy on
+guardrails: build them once trust has actually been broken, not before
+(humans later). Live-verified all three alerts; found and had fixed an
+unauthenticated read of `GET /rooms` and `/rooms/{id}`. Full account in
+`EOT Journal - 2026-10-02 1252.md`.
