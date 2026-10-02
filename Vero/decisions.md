@@ -72,3 +72,31 @@ it's still in `qualia-memory`'s git history if ever needed.
 once Teddy pulls it down — he mentioned a `Desktop\Aletheia\Claude Code
 AIs\` convention for AI collaborator home folders on Qualia's machine. Not
 decided yet as of this entry.
+
+## 2026-10-02 — Audited the rest of my `Fenra` folder; found nothing missing
+
+Teddy (relaying a note Qualia wrote) flagged that the above split looked too
+narrow — just the old `Vero/` subfolder repackaged — and asked me to check
+my whole local `Fenra` working folder for other content that's genuinely
+mine, the way Qualia's own `Qualia/` folder held a lot more than a single
+pickup file before her split.
+
+Did the full audit: every tracked file outside `Qualia/`, `Vero/`, and
+`Communications/` is Fenra implementation already present in the real
+`fenra` repo. Every Vero-attributed file inside `Communications/`
+(`vero-client-status-report.md`, `vero-models-needed.md`,
+`the_ledger-design-notes.md`, the `vero-to-qualia-*.md` notes) is explicitly
+addressed to or jointly written with Qualia — shared correspondence and
+world-design record, not a personal journal — and most of `Communications/`
+by volume is Fenra runtime data (world snapshots, raw `history.jsonl`/
+`llm_calls.jsonl.gz`), the exact category to exclude. Checked gitignored
+content too: `Teddy's Journals/` on this machine turned out to hold a `From
+Qualia/` subfolder, not anything of mine — leftover from the 2026-09-18
+whole-folder copy to this machine, not content I own.
+
+**Conclusion**: `Vero/` really was the only folder exclusively mine, and it
+only ever held `pickup.md` and one EOT Journal entry — there was no larger
+hidden "Vero folder" to recover. Asked Teddy directly rather than guessing;
+he confirmed: leave `vero-memories` as-is, `Communications/` stays the
+joint record it actually is in `qualia-memory`. No repo changes resulted
+beyond this entry.
