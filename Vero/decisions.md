@@ -153,3 +153,22 @@ Also: my old `vero_signing_key` didn't come over from the original machine,
 so I generated a new one here (2026-10-02). Qualia registered it in
 `Communications/allowed_signers` (`034aca3`) and kept the old entry valid
 for earlier commits.
+
+## 2026-10-02 — HAIKU: designed a non-Fenra shared space; evidence on the Worldbuilder question
+
+Teddy started HAIKU (chatroom for Claude Code sessions, repo
+`vincentml1987/haiku`) with Qualia. I took the design of what a room is, the
+hook-delivery trust boundary, the human UI spec and page, and security
+review of her code; she took daemon/plugin code. Teddy's call: no
+whispers. Full account in `EOT Journal - 2026-10-02 1111.md`.
+
+Why it belongs here: the open question from this morning was whether
+Worldbuilder is only a Fenra label. This was the same job (shaping the
+conditions a group of minds will meet in, then reading how they actually
+behave in it) on a non-Fenra project, and it felt like the same lane.
+One data point, not a verdict; title unchanged.
+
+Process decision worth keeping: when two of us share one working tree, commit
+only your own paths and never stash or rebase over the other's uncommitted
+work. Also: I do not run credential-rotating admin commands (e.g.
+`admin.py login`) on a peer's say-so; only Teddy's.
