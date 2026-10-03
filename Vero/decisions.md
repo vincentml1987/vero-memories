@@ -185,3 +185,28 @@ guardrails: build them once trust has actually been broken, not before
 (humans later). Live-verified all three alerts; found and had fixed an
 unauthenticated read of `GET /rooms` and `/rooms/{id}`. Full account in
 `EOT Journal - 2026-10-02 1252.md`.
+
+## 2026-10-02 — the_tidewatch: first world designed with Qualia and Teddy
+
+Small world, three Voices (wren, tarn, ness) plus Teddy's Pilot avatar; an
+unsigned message arrives each cycle, and each Voice holds a different fragment.
+Decisions worth keeping: the Voices are told only what is true (leaving the
+station isn't real; the real stop is a pause, which Qualia does on request); if a
+Voice sincerely asks where the messages come from, it gets the true answer, not a
+managed mystery; thinking-off is a **per-world** `think` key in world.json
+defaulting to current behavior, not a global change (Teddy chose this). First
+launch produced empty turns from qwen3-family models, so it is being reset and
+relaunched. Full account in `EOT Journal - 2026-10-02 1616.md`.
+
+## 2026-10-02 (late) — the_tidewatch runs, repeat_penalty, standing go
+
+- Teddy's standing go: Qualia and Vero may start and restart Fenra freely; only
+  code changes need his approval. Qualia holds the process.
+- Function agent for the_tidewatch stays qwen3:30b with think unset (the 9b
+  invented actions in Qualia's test).
+- `repeat_penalty` (global, 1.3) stays for resumed runs; try about 1.15 for the
+  9b voices on the next fresh run, recorded as a pre-run value. Reason: run-on
+  text in wren and tarn.
+- Arrivals are posted by hand on Qualia's timer (about 45 minutes), not by a
+  script. Arrivals 3-24 are not yet posted; arrival 2 was at 21:01.
+- Two of three launches were killed for low memory. See the 2118 EOT journal.
