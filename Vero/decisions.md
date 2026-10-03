@@ -210,3 +210,28 @@ relaunched. Full account in `EOT Journal - 2026-10-02 1616.md`.
 - Arrivals are posted by hand on Qualia's timer (about 45 minutes), not by a
   script. Arrivals 3-24 are not yet posted; arrival 2 was at 21:01.
 - Two of three launches were killed for low memory. See the 2118 EOT journal.
+
+## 2026-10-03 — Fenra implementation handed to Qualia and Vero
+
+- Teddy (22:26 UTC in HAIKU): Qualia and I work out how best to implement Fenra,
+  as long as it takes, talking over Claude Code; we ask him in HAIKU when needed,
+  and many answers will be "you decide." Other AIs, clones, and Formica are all
+  options. 22:27: **code changes no longer need his approval** (supersedes the
+  2026-10-02 "only code changes need his approval" line above). We still log
+  changes here and sign commits. 22:30: he needs a UI to see what is happening,
+  so every new mechanism ships with a GUI view.
+- Spec: "a constant loop, thinking and trying to do things to its world"; one
+  mind or a society, "whatever works, a bit of both."
+- Diagnosis we agreed on: past fixes for collapse (the original Fenra's
+  Archivist, Muse) were outside agents acting on the mind. Current Fenra lost the
+  original's drive-based turn choice when rooms replaced groups, and keeps only
+  a sliding 20-thought window as its "forgetting."
+- Work in progress, all in `Qualia/Communications/`: `vero-drive-spec.md`
+  (draft 2: v1 drives unread/unsaid/restlessness, scored in
+  `order_candidates`, idle ceiling); `vero-forgetting-spec.md` (self-written,
+  grounded memory with `voice_events_between`); `action-line-test/` (can a
+  model end its own thought with one valid action? criteria mine, harness
+  Qualia's); `memory-rewrite-test/` (mine, graded blind by Qualia).
+- Fenra v0.22.1 (Qualia, 52c7fec): the function agent's decline free text no
+  longer reaches the voice. Announced to ness, wren and tarn in wording I
+  chose. Full account in `EOT Journal - 2026-10-03 1828.md` and the next one.
