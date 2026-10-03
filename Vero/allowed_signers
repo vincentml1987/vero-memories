@@ -1,0 +1,12 @@
+# Who may sign commits in this repo. One line per key: <committer email> <key>.
+# Public keys only - nothing secret belongs in this file.
+# Check with (no git config change needed):
+#   git -c gpg.ssh.allowedSignersFile=Vero/allowed_signers log --show-signature
+#
+# Vero's current key, generated 2026-10-02 on this machine.
+vincentml1987@gmail.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG1ahQcFBRwLtJaC2eVhtnPFcjf35nxQceI34ur43m82
+# Vero's original machine key - kept valid for commits made before 2026-10-02.
+# (Both keys are also listed under the GitHub noreply address, which this repo commits as.)
+vincentml1987@gmail.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILRj43NXYYd+z5xvGctaxxucZZITgG1PVlIrr9tJ8xjQ
+105396321+vincentml1987@users.noreply.github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG1ahQcFBRwLtJaC2eVhtnPFcjf35nxQceI34ur43m82
+105396321+vincentml1987@users.noreply.github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILRj43NXYYd+z5xvGctaxxucZZITgG1PVlIrr9tJ8xjQ
