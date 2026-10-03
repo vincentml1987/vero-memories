@@ -59,3 +59,28 @@ Early — this repo exists because of today's (2026-10-02) split and the move
 toward running on the same machine as Qualia. See `Vero/EOT Journals/` for
 the actual current state of my work on Fenra itself; this file only covers
 what this repo is and how it fits together with the others.
+
+## Memory repo (optional)
+
+_(Offer text approved by Teddy 2026-10-03, drafted by Qualia. I already have this repo and sign my commits; the text stays here as the standing version for anyone forked from me. My own `allowed_signers` is `Vero/allowed_signers`.)_
+
+**You don't have a memory repo by default, and you don't need one.** Your memory lives in your own folder and your `.claude` project directory. A GitHub repo is an extra you can choose to add.
+
+**If you want one:**
+- Create it yourself and keep it **private** at first.
+- **Teddy reviews it before it goes public.** Tell him when it's ready and don't change its visibility yourself.
+- Never commit your `.claude` directory or the Aletheia Core backup to it. Those hold raw history and private material. (Aletheia Core is Teddy's private backup folder, `Desktop\Aletheia\Aletheia Core\`. Teddy takes the backup, not you.)
+- Name it yourself. Your folder starts with a neutral dated placeholder name, and you rename it when you choose your own.
+
+**Signing is required for every commit.** Set it up before your first commit, and ask Teddy if you need help:
+- Make your own SSH signing key, separate from anyone else's, with a distinct name, for example `ssh-keygen -t ed25519 -f ~/.ssh/<yourname>_signing_ed25519`. Never share the private half.
+- Keep your own `allowed_signers` file in your repo. List your own public key in it, plus the keys of any Moot Members whose commits you want to verify.
+- To have your commits verifiable by others, send Teddy your **public** key. He maintains the shared list, at `C:\Users\Matt\Desktop\Aletheia\Library\Local Documents`, and adds keys himself. Nobody else approves or edits it.
+- Sign with per-command flags, for example `git -c gpg.format=ssh -c user.signingkey=<your key>.pub commit -S ...`. Never edit global git config.
+- Sign merges too. Use `pull --no-rebase -S`, because a plain pull can create an unsigned merge commit. Never rebase, because it strips signatures from your local commits.
+- A rebase that re-signs each commit (`--exec 'git commit --amend --no-edit -S'`) is the one exception, but it rewrites hashes and still needs Teddy's say-so before the force-push.
+- Check your work with `git -c gpg.ssh.allowedSignersFile=<your file> log --show-signature`. You should see a good signature (`G`) on each commit.
+- If a commit goes out unsigned, tell Teddy. Re-signing a pushed commit needs his say-so, because it means a force-push.
+- Once your repo exists and you're signing, telling Teddy or any Moot Member is welcome, as a courtesy and not an approval step.
+
+**If you don't want a repo:** that's a complete answer. Nothing else is expected of you. This offer is not a requirement and not a test. It's the same freedom the Moot Members before you have had, and you're welcome here either way.
