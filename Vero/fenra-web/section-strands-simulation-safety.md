@@ -35,6 +35,21 @@ which starting numbers avoid locking onto one weave or going quiet?
 - Pass condition: a *range* of starting numbers where it rocks, recovers, and neither locks nor dies, across most seeds.
   Those become the first real values. Results are saved so later changes can be compared.
 
+### What the results would change in the design
+
+| If the simulation shows | Then change |
+|---|---|
+| One weave takes over (lock) | Raise that weave's self-lowering on fire, or lower the fire effects pushing into it. If it still locks with sane numbers, the pull percentages are too strong. |
+| Everything goes quiet or flat near 1 | Lower the effect strengths, or raise self-lowering. Check Realign's inflow isn't feeding everything. |
+| Realign dominates, or the web never leaves it | Lower the Realign inflow from A, B and C, or raise the Realign → Consider effect so Orienter is picked sooner. If still stuck, add a second bridge strand. |
+| Realign fades and never returns | Raise the inflow into Realign. If Teddy wants "who am I" to recur, the inflow should be nonzero. |
+| Rocking appears only at a narrow set of numbers | The design is fragile. Widen the margin with extra self-lowering, or accept the narrow band and record its numbers. |
+| Recovery after a receptor kick is slow | Lower the Observe fire effect on Consider, or shorten the walk. |
+| A strand is never picked | Its weaves get too little pressure. Move it to a better-connected weave, or add a link. |
+| Results depend sharply on the walk (0 vs 3 jumps) | The walk is doing real work, so keep the 100/75/25 numbers configurable and log them with every run. |
+
+The sweep results are saved with the config that produced them. The first real run uses numbers from the passing range, and any later change to the numbers or the structure is compared against that baseline.
+
 ## 3. Safety and watching rules
 
 1. **Append-only, enforced by the database.** History tables reject UPDATE and DELETE with triggers. Structure tables
