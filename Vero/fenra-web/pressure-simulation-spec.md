@@ -1,4 +1,4 @@
-# Pressure simulation — spec (draft 1, 2026-10-05, Vero)
+# Pressure simulation — spec (draft 2, 2026-10-05, Vero)
 
 Planning only. No code. This is the spec for a **model-free** toy run of the Fenra web's pressure rules, to learn
 whether the "rocking" motion (A → B → C → B → A) appears and which starting numbers keep the web from locking
@@ -11,7 +11,7 @@ Teddy can overrule it.
 - **Weaves:** Realign, A (Express), B (Consider), C (Observe). Each has a pressure `p` in [0, 1).
   Start: A = B = C = 0; Realign close to 1 (it can approach 1 but never reach it, so use 0.99).
 - **Strands:** a small made-up set, each belonging to one or more weaves (see `first-strands-draft.md`).
-- **Pressure map:** two-way links A–B, B–C (and Realign's links, see Open questions). Used only to compute pull.
+- **Pressure map:** two-way links A–B, B–C and Realign–B. Used only to compute pull.
 - **Fire effects:** a directed table, "when weave X fires, how much it changes weave Y".
 - **Receptor:** an external event that adds pressure to chosen weaves (Teddy's message raises C).
 - **No models, no text.** A "fire" is just the bookkeeping below.
@@ -45,7 +45,7 @@ Because pressure only moves by fractions of the remaining gap, it stays in [0, 1
 - Self-lowering amount per fire.
 - Walk percentages (100/75/25) and number of jumps (0 to 3).
 - Receptor strength and frequency (including never).
-- Realign's starting value and how, or whether, it regains pressure.
+- Realign's inflow from A, B and C (including zero as a control).
 - Number of strands and how many weaves each is in.
 
 Run each setting for thousands of steps over several seeds.
@@ -68,18 +68,32 @@ There is a **range** of starting numbers (not a single magic value) where the we
 receptor kick, and neither locks nor dies, across most seeds. Those numbers become the starting values for the
 first real run, and the sweep results get saved so a later change can be compared with them.
 
-## Open questions (they change what is simulated)
+## Answered by Teddy (2026-10-05, draft 2 of this spec)
 
-1. **Connectivity of Realign.** Realign starts at pressure ~1, so the first fire is a Realign strand. Candidates
-   after that must share a weave with it. If no Realign strand also sits in A, B or C, the web is stuck in
-   Realign forever. At least one strand has to bridge Realign to the rest. Which one, and which weave does it
-   bridge to?
-2. **Does Realign regain pressure,** and from what? If it only ever falls, it fires a few times and then is
-   effectively gone. If receptors or other weaves raise it, "who am I" keeps coming back, which may be intended.
-3. **Is Realign connected on the pressure map,** and to which weaves?
-4. **How multiple lowers and raises combine** when several weaves fire together (the ordering assumption above).
-5. **Pull percentages:** is "3 jumps" direct plus two further jumps, or direct plus three? (I read the first,
-   because Teddy named three percentages.)
+1. **Connectivity of Realign:** Orienter sits in Realign and Consider and is the bridge. Realign also holds two
+   strands that talk to each other (Recaller and Checker, in `first-strands-draft.md`). When Realign fires it
+   raises Consider's pressure, so the chance of Orienter being picked goes up.
+2. **Realign regains pressure:** a very small amount from each of A, B and C (three fire-effect rows with small amounts).
+3. **Pressure map:** Realign is on it, linked to Consider only for now. So the links are Realign–B, A–B, B–C.
+4. **Lowers first, then raises** when several weaves fire together (my assumption confirmed).
+5. **Walk:** direct plus two further jumps, at 100 / 75 / 25 (confirmed). The pull counts even when a strand isn't
+   reachable in that weave.
+6. **Realign starts at 0.99.**
+
+## What the simulation should check with those rules (new questions it answers, not decisions for Teddy)
+
+- **The exit from Realign** is only through Orienter. Does the web leave Realign promptly, or can Recaller and Checker
+  hand off to each other for a long time first? How long does it stay in Realign at different strengths of the
+  Realign → Consider fire effect?
+- **Whether Realign dominates.** With a 0.99 start and a small inflow from A, B and C, does Realign keep pulling the
+  web back, or fade? "Keeps coming back without dominating" is the target.
+- **Sensitivity to the size of the Realign inflow** (try several values, including zero, as a control).
+
+## Open parameter choices (not design questions, just values to sweep)
+
+- Fire-effect amounts for every pair, including the three small inflows into Realign.
+- Self-lowering amount per fire.
+- Receptor strength and frequency.
 
 ## Not part of this spec
 

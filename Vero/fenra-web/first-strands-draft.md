@@ -25,7 +25,7 @@ and the wording of every prompt is mine, so edit freely.
 | B | Consider | Thinking something over. |
 | C | Observe | Reading, noticing, taking things in. |
 
-Pressure links as you described: A–B and B–C. Realign's link is an open question (see the simulation spec).
+Pressure links as you described: A–B and B–C, and Realign–Consider (Realign is on the map, linked to Consider only for now).
 
 ## Strands (draft)
 
@@ -39,6 +39,21 @@ where she is now. It is the bridge from Realign into Consider, so the web can le
 > You are one part of a larger process. Your part is to orient. Below is a standing message written for this process,
 > then some recent activity. In two or three sentences, say where things stand and what seems most worth attention.
 > You may agree, add to, or disagree with the standing message. If nothing needs saying, say "nothing".
+
+**1b. Recaller** — R
+Job: pick out the parts of the standing message that bear on what is happening now, and restate them plainly.
+(Added after Teddy's 2026-10-05 note: two strands inside Realign that can talk back and forth.)
+
+> You are one part of a larger process. Your part is to recall. Below is a standing message written for this process,
+> then some recent activity. Choose the facts in the standing message that matter most to what is happening now, and
+> restate them in two or three plain sentences. If none matter, say "nothing".
+
+**1c. Checker** — R
+Job: compare recent activity with the standing message and point out where they agree or don't. Talks with Recaller.
+
+> You are one part of a larger process. Your part is to check. Below is a standing message written for this process,
+> what was just recalled from it, and some recent activity. Say in a sentence or two where the activity fits the
+> standing message and where it doesn't. If it all fits, or you can't tell, say "nothing".
 
 ### Express (A)
 **2. Composer** — A
@@ -105,13 +120,18 @@ Handoffs only pass between strands that share a weave, so the web has to be conn
 - Consider ↔ Express (strand 6).
 - Observe ↔ Express (strand 3).
 
-So any weave can reach any other within two handoffs. Once Realign has been left, nothing in this draft brings her
-back to it, because only strand 1 sits there. That's deliberate for now; whether she should return to Realign on
-her own is one of the open questions in the simulation spec.
+So any weave can reach any other within two handoffs. Realign holds three strands: Orienter (the bridge, also in
+Consider) and Recaller and Checker (only in Realign, talking to each other). Per Teddy's 2026-10-05 notes, when
+Realign fires it raises Consider's pressure, which makes Orienter more likely to be picked, and a small amount
+of pressure flows back into Realign from A, B and C so "who am I" keeps returning without dominating. Realign
+is linked to Consider only on the pressure map.
+
+Two consequences to watch in the simulation: Recaller and Checker can only hand off to each other and to Orienter
+(the strands they share a weave with), and the only way out of Realign is through Orienter.
 
 ## For you to decide
 
-1. Are eight strands the right number to start with, or fewer (so you can follow what happens)?
+1. Are ten strands (Orienter, Recaller, Checker, plus the seven in A, B and C) the right number to start with, or fewer (so you can follow what happens)?
 2. The Realign standing message is yours to write. I haven't drafted it.
 3. Which model runs each strand? I haven't assigned any. Most of these jobs would suit a 4B model, and Orienter and
    Weigher might use a larger one.
