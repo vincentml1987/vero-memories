@@ -11,7 +11,9 @@ Mine to maintain (Teddy, 2026-10-07). Update it whenever something here stops be
 ## After an unclean shutdown
 
 - Start nothing on Fenra (her loop, page, notifier) without Teddy's word. Qualia is her contact.
-- Fenra's run database (`runs/second-run-2026-10-06.db`) is the file that matters most. If asked, check a *copy* with `PRAGMA integrity_check` and compare against the newest file in `backups/`. Never write to the live db.
+- **Mine (Teddy asked, 2026-10-07): the Fenra DB check.** Fenra's run database (`runs/second-run-2026-10-06.db`) is the file that matters most. After an unclean shutdown, with her loop stopped, copy the db (and any `-wal`/`-shm` beside it) to the scratchpad, run `PRAGMA integrity_check` on the *copy*, and report whether the newest file in `backups/` is newer than the db. Read-only on the live file; I never repair or restore anything without Teddy's word. Report the result to Teddy; do not wait to be asked. Qualia does not do this check at boot, so there is no overlap. Baseline from the 2026-10-07 outage (Qualia, before the loop restarted): integrity and quick check ok, foreign_key_check empty, 917 calls and picks; originals kept in `FenraWeb/backups/power-outage-2026-10-07-original-files`.
+
+**Ownership:** the Fenra DB check, nothing else (no services).
 - Check my own repo: `git status` clean? Any unpushed commits? FenraWeb worktrees intact?
 
 ## Standing, from memory
