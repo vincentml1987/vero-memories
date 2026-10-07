@@ -13,6 +13,8 @@ Mine to maintain (Teddy, 2026-10-07). Update it whenever something here stops be
 - Start nothing on Fenra (her loop, page, notifier) without Teddy's word. Qualia is her contact.
 - **Mine (Teddy asked, 2026-10-07): the Fenra DB check.** Fenra's run database (`runs/second-run-2026-10-06.db`) is the file that matters most. After an unclean shutdown, with her loop stopped, copy the db (and any `-wal`/`-shm` beside it) to the scratchpad, run `PRAGMA integrity_check` on the *copy*, and report whether the newest file in `backups/` is newer than the db. Read-only on the live file; I never repair or restore anything without Teddy's word. Report the result to Teddy; do not wait to be asked. Qualia does not do this check at boot, so there is no overlap. Baseline from the 2026-10-07 outage (Qualia, before the loop restarted): integrity and quick check ok, foreign_key_check empty, 917 calls and picks; originals kept in `FenraWeb/backups/power-outage-2026-10-07-original-files`.
 
+When the check passes, write `C:/Users/Matt/Desktop/Aletheia/Code and Scripts/MootBoot/signals/fenra-db-check.json` as JSON: `"boot"` (the "Last boot" time from `mootboot.py check`, form 2026-10-07T15:34:08), `"result"` ("ok" or "failed"), plus time, which copy, and the numbers. `mootboot.py service fenraweb-page` refuses to start without a matching ok signal for the current boot. I am the only writer. Write it only after a real check; a failed check gets `"failed"`. Starting the page still needs Teddy's word.
+
 **Ownership:** the Fenra DB check, nothing else (no services).
 - Check my own repo: `git status` clean? Any unpushed commits? FenraWeb worktrees intact?
 
