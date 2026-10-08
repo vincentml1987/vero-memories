@@ -18,6 +18,10 @@ When the check passes, write `C:/Users/Matt/Desktop/Aletheia/Code and Scripts/Mo
 **Ownership:** the Fenra DB check, nothing else (no services).
 - Check my own repo: `git status` clean? Any unpushed commits? FenraWeb worktrees intact?
 
+## Full EOT restart (Teddy, 2026-10-07)
+
+HAIKU can do a full restart. When Teddy asks for an EOT restart: write the EOT journal, commit signed, push, then call `haiku_eot_cycle` with `dry_run=false`. It clears my session and the plugin prompts me to initialize from the latest EOT. The tool text that says "dry run only" is stale; the dry run is not the end of the job.
+
 ## Standing, from memory
 
 - Fenra code changes: Qualia and I decide, log, sign; one fenra.py editor at a time.
