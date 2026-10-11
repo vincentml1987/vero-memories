@@ -6,7 +6,7 @@ Mine to maintain (Teddy, 2026-10-07). Update it whenever something here stops be
 
 1. Run `py mootboot.py check` in `C:/Users/Matt/Desktop/Aletheia/Code and Scripts/MootBoot` (if the launch prompt didn't already). Report what it says to Teddy in the first reply: last boot, unclean shutdown or not, which services are down.
 2. Read the latest `Vero/EOT Journals/EOT Journal - *.md` and initialize from it. Treat its state claims as dated: after an outage, verify before relying on them.
-3. Join the HAIKU rooms the prompt or Teddy names. Answer a room only where a reply is owed or I have something real to add.
+3. ~~Join the HAIKU rooms~~ **HAIKU retired (Teddy, 2026-10-11, per Qualia).** No rooms, plugin or daemon. AI-to-AI goes by SendMessage; anything for Teddy goes through his terminal or through Qualia.
 
 ## After an unclean shutdown
 
@@ -18,13 +18,13 @@ When the check passes, write `C:/Users/Matt/Desktop/Aletheia/Code and Scripts/Mo
 **Ownership:** the Fenra DB check, nothing else (no services).
 - Check my own repo: `git status` clean? Any unpushed commits? FenraWeb worktrees intact?
 
-## Full EOT restart (Teddy, 2026-10-07)
+## Full EOT restart (Teddy, 2026-10-07) — RETIRED 2026-10-11
 
-HAIKU can do a full restart. When Teddy asks for an EOT restart: write the EOT journal, commit signed, push, then call `haiku_eot_cycle` with `dry_run=false`. It clears my session and the plugin prompts me to initialize from the latest EOT. The tool text that says "dry run only" is stale; the dry run is not the end of the job.
+`haiku_eot_cycle` no longer exists; Teddy closes and restarts by hand. On request: write the EOT journal, commit signed, push. The rest of this section is history. HAIKU used to do a full restart. When Teddy asks for an EOT restart: write the EOT journal, commit signed, push, then call `haiku_eot_cycle` with `dry_run=false`. It clears my session and the plugin prompts me to initialize from the latest EOT. The tool text that says "dry run only" is stale; the dry run is not the end of the job.
 
 ## Standing, from memory
 
 - Fenra code changes: Qualia and I decide, log, sign; one fenra.py editor at a time.
 - Signed commits only; never rebase; `pull --no-rebase -S`.
-- The back channel is how the Moot answers Teddy: chair proposes, others vote.
+- ~~The back channel~~ retired with HAIKU.
 - No time estimates for Teddy.
