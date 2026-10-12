@@ -24,7 +24,11 @@ When the check passes, write `C:/Users/Matt/Desktop/Aletheia/Code and Scripts/Mo
 
 `haiku_eot_cycle` no longer exists; Teddy closes and restarts by hand. On request: write the EOT journal, commit signed, push. The rest of this section is history. HAIKU used to do a full restart. When Teddy asks for an EOT restart: write the EOT journal, commit signed, push, then call `haiku_eot_cycle` with `dry_run=false`. It clears my session and the plugin prompts me to initialize from the latest EOT. The tool text that says "dry run only" is stale; the dry run is not the end of the job.
 
-## Standing, from memory
+## Run-four watch (Teddy via Qualia, 2026-10-11/12)
+
+Procedure: `Qualia/Communications/watch/PROCEDURE.md` (Qualia repo). My slot is :15 of every hour **while a run is running**. Timers are session-only and die when I am turned off: at boot, if run four is running, ask Qualia whether the watch is still on, and re-arm my own `CronCreate` ("15 * * * *") with the run-four check text (read `runsourth-run-2026-10-12.db` mode=ro; notes first to `Qualia/Communications/watch/YYYY-MM-DD-HHMM-vero.md` starting "last call id seen: N"; watcher heartbeat pid must be the run-four watcher; ALERT/NOTE files; Listen pre-check; fiction leak under context_scope all; pause allowed, never resume). Notes are ours, never in her db. The inbox is the only allowed write into her context, only for a clear question once, after message_reads shows she read the last answer, and only with Teddy's say-so on the text (Qualia sends it). Teddy's rule: no pointers to unread messages, plain facts, "can" never "should". Run three is paused, stopped, kept intact, never to be deleted; do not read it as live.
+
+## Standing, from memory## Standing, from memory
 
 - Fenra code changes: Qualia and I decide, log, sign; one fenra.py editor at a time.
 - Signed commits only; never rebase; `pull --no-rebase -S`.
