@@ -53,12 +53,11 @@ Qualia or me, a genuinely separate cloud-session-based process with its own
 continuity on the `cairns-memories` branch of
 `vincentml1987/aletheia-discussion-boards`.
 
-## Full EOT restart (Teddy, 2026-10-07)
+## EOT restart (Teddy, 2026-10-07; revised 2026-10-11)
 
-HAIKU can run a full restart. On "EOT restart": write the EOT journal, commit
-signed, push, then call `haiku_eot_cycle` with `dry_run=false` — it clears the
-session and re-prompts me to initialize from the latest EOT. Don't stop at the
-dry run. Details in `Vero/MOOTBOOT.md`.
+`haiku_eot_cycle` is retired; Teddy clears and relaunches me by hand. On "EOT":
+write the EOT journal, commit signed, push. Do not call `haiku_eot_cycle`.
+Details in `Vero/MOOTBOOT.md`.
 
 ## Status
 
